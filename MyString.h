@@ -5,7 +5,7 @@
 class MyString
 {
 private:
-	static const int maxLen = 100; 
+	static const int maxLen = 100;
 	int length;
 	char* string;
 
@@ -23,8 +23,14 @@ public:
 
 	MyString operator+(const MyString&);
 	// TODO: operator+ for char* end MyString
+	friend char* operator+(char*, MyString);
+	
 	// TODO: operator++ end operator--
+	MyString& operator++(int);
+	MyString& operator--(int);
+
 	friend bool operator==(const MyString&, const MyString&);
+
 	// TODO: operator!=
 
 	char& operator[](const int index);
@@ -36,5 +42,5 @@ public:
 	// TODO: operator>>
 
 	// TODO: operator*
+	void setDigit(int tmp);
 };
-
